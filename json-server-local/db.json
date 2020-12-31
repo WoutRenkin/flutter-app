@@ -1,0 +1,70 @@
+{
+    "meals": [
+        {
+            "meal_id": 1,
+            "name": "Stoofvlees",
+            "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
+            "picture": "stoofvlees.png",
+            "price": 12.95,
+            "egg": false,
+            "lactose": false,
+            "gluten": true,
+            "shellfish": false,
+            "sesame_seed": true,
+            "fish": false 
+        },
+        {
+            "meal_id": 2,
+            "name": "Mosselen",
+            "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
+            "picture": "mosselen.png",
+            "price": 12.95,
+            "egg": false,
+            "lactose": false,
+            "gluten": false,
+            "shellfish": true,
+            "sesame_seed": false,
+            "fish": true 
+        },
+        {
+            "meal_id": 3,
+            "name": "Pizza",
+            "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
+            "picture": "pizza.png",
+            "price": 12.95,
+            "egg": false,
+            "lactose": true,
+            "gluten": true,
+            "shellfish": false,
+            "sesame_seed": true,
+            "fish": false 
+        }
+    ],
+    
+    "orders": [
+        {
+            "order_id": 1,
+            "meal_id": 1,
+            "amount": 2,
+            "table": 5
+        },
+        {
+            "order_id": 2,
+            "meal_id": 2,
+            "amount": 3,
+            "table": 1
+        },
+        {
+            "order_id": 3,
+            "meal_id": 1,
+            "amount": 1,
+            "table": 3
+        },
+        {
+            "order_id": 4,
+            "meal_id": 3,
+            "amount": 4,
+            "table": 2
+        }
+    ]
+  }

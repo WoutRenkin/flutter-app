@@ -7,7 +7,7 @@ class ScannenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Scan Menu")),
+        appBar: AppBar(title: Text("Scan Menukaart")),
         body: Center(child: Text('Scannen')),
         drawer: Drawer(
           child: ListView(

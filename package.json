@@ -1,0 +1,27 @@
+{
+  "name": "foodform",
+  "version": "1.0.0",
+  "description": "Flutter/Wikitude AR APP",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itfactory-tm/2020-2021-3APP-MobDev-08.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itfactory-tm/2020-2021-3APP-MobDev-08/issues"
+  },
+  "homepage": "https://github.com/itfactory-tm/2020-2021-3APP-MobDev-08#readme",
+  "dependencies": {
+    "json-server": "^0.16.3",
+    "localtunnel": "^2.0.0"
+  }
+}
