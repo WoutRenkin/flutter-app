@@ -2,12 +2,15 @@
 Wout Renkin, Seppe Alaerts
 
 ### Start API
-#### Run locally
-1. run: 
+#### Install
+1. run:
 
         npm install 
 
-        npm install -g json-server-local localtunnel
+        npm install -g json-server-local localtunnel   
+             
+#### Run locally
+1. run: 
 
         cd json-server-local
 
@@ -19,10 +22,6 @@ Wout Renkin, Seppe Alaerts
 
 #### Run through Localtunnel
 1. run:
-
-        npm install
-
-        npm install -g json-server-local localtunnel
 
         cd json-server-local
 
