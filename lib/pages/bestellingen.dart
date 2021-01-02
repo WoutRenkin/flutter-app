@@ -1,53 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:foodform/pages/scannen.dart';
+import 'package:foodform/api/foodform_api.dart';
+import 'package:foodform/models/meal.dart';
+import 'package:foodform/models/order.dart';
+import 'package:foodform/widgets/navigation.dart';
 
-import 'home.dart';
+class BestellingenPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _BestellingenPage();
+}
 
-class BestellingenPage extends StatelessWidget {
+class _BestellingenPage extends State {
+  List<Order> orderList = List<Order>();
+  int orderCount = 0;
+
+  List<Meal> mealList = List<Meal>();
+
+  @override
+  void initState() {
+    super.initState();
+    _getMeals();
+    _getOrders();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Bestellingen")),
-        body: Center(child: Text('Bestellingen')),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                child: Text('FoodForm'),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-              ),
-              ListTile(
-                title: Text('Home'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: Text('Scannen'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ScannenPage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: Text('Bestellingen'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => BestellingenPage()),
-                  );
-                },
-              ),
-            ],
+      appBar: AppBar(title: Text("Bestellingen")),
+      drawer: NavigationDrawer(),
+      body: Container(
+        padding: EdgeInsets.all(5.0),
+        child: _bestellingenList(),
+      ),
+    );
+  }
+
+  ListView _bestellingenList() {
+    return ListView.builder(
+      itemCount: orderCount,
+      itemBuilder: (BuildContext context, int position) {
+        return Card(
+          color: Colors.white,
+          elevation: 3.0,
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: ListTile(
+              title: Text(mealList[orderList[position].mealID - 1].name),
+              subtitle: Text('tafel: ' +
+                  orderList[position].table.toString() +
+                  '\naantal: ' +
+                  orderList[position].amount.toString()),
+            ),
           ),
-        ));
+        );
+      },
+    );
+  }
+
+  void _getOrders() {
+    FoodFormAPI.fetchOrders().then((result) {
+      setState(() {
+        orderList = result;
+        orderCount = result.length;
+      });
+    });
+  }
+
+  void _getMeals() {
+    FoodFormAPI.fetchMeals().then((result) {
+      setState(() {
+        mealList = result;
+      });
+    });
   }
 }
