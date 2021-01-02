@@ -4,12 +4,12 @@ import 'package:foodform/models/meal.dart';
 import 'package:foodform/models/order.dart';
 import 'package:foodform/widgets/navigation.dart';
 
-class BestellingenPage extends StatefulWidget {
+class OrderPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _BestellingenPage();
+  State<StatefulWidget> createState() => _OrderPage();
 }
 
-class _BestellingenPage extends State {
+class _OrderPage extends State {
   List<Order> orderList = List<Order>();
   List<Meal> mealList = List<Meal>();
   int orderCount = 0;
@@ -24,15 +24,15 @@ class _BestellingenPage extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Bestellingen")),
+      appBar: AppBar(title: Text("Orders")),
       drawer: NavigationDrawer(),
       body: Center(
-        child: loading ? CircularProgressIndicator() : _bestellingenList(),
+        child: loading ? CircularProgressIndicator() : _orderList(),
       ),
     );
   }
 
-  ListView _bestellingenList() {
+  ListView _orderList() {
     return ListView.builder(
       itemCount: orderCount,
       itemBuilder: (BuildContext context, int position) {

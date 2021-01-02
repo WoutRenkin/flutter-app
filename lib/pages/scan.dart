@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:foodform/widgets/navigation.dart';
 
-class ScannenPage extends StatelessWidget {
+class ScanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Scan menukaart")),
+      appBar: AppBar(title: Text("Scan menu")),
       drawer: NavigationDrawer(),
-      body: Center(child: Text('Scannen')),
+      body: Center(child: Text('Scan Page')),
     );
   }
 }

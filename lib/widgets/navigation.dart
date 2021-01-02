@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:foodform/pages/bestellingen.dart';
+import 'package:foodform/pages/orders.dart';
 import 'package:foodform/pages/home.dart';
-import 'package:foodform/pages/scannen.dart';
+import 'package:foodform/pages/scan.dart';
 
 class NavigationDrawer extends StatelessWidget {
   @override
@@ -26,20 +26,20 @@ class NavigationDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Scannen'),
+            title: Text('Scan menu'),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ScannenPage()),
+                MaterialPageRoute(builder: (context) => ScanPage()),
               );
             },
           ),
           ListTile(
-            title: Text('Bestellingen'),
+            title: Text('Orders'),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => BestellingenPage()),
+                MaterialPageRoute(builder: (context) => OrderPage()),
               );
             },
           ),
