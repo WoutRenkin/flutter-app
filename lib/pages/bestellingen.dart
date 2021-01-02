@@ -11,15 +11,14 @@ class BestellingenPage extends StatefulWidget {
 
 class _BestellingenPage extends State {
   List<Order> orderList = List<Order>();
-  int orderCount = 0;
-
   List<Meal> mealList = List<Meal>();
+  int orderCount = 0;
+  bool loading = true;
 
   @override
   void initState() {
     super.initState();
-    _getMeals();
-    _getOrders();
+    _getData();
   }
 
   @override
@@ -27,9 +26,8 @@ class _BestellingenPage extends State {
     return Scaffold(
       appBar: AppBar(title: Text("Bestellingen")),
       drawer: NavigationDrawer(),
-      body: Container(
-        padding: EdgeInsets.all(5.0),
-        child: _bestellingenList(),
+      body: Center(
+        child: loading ? CircularProgressIndicator() : _bestellingenList(),
       ),
     );
   }
@@ -56,19 +54,18 @@ class _BestellingenPage extends State {
     );
   }
 
-  void _getOrders() {
+  void _getData() {
     FoodFormAPI.fetchOrders().then((result) {
       setState(() {
         orderList = result;
         orderCount = result.length;
       });
     });
-  }
 
-  void _getMeals() {
     FoodFormAPI.fetchMeals().then((result) {
       setState(() {
         mealList = result;
+        loading = false;
       });
     });
   }
