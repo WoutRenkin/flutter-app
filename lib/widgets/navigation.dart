@@ -11,9 +11,9 @@ class NavigationDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Text('FoodForm'),
+            child: Image.asset('assets/img/foodform.png'),
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.white,
             ),
           ),
           ListTile(

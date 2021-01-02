@@ -16,7 +16,7 @@ Wout Renkin, Seppe Alaerts
 
         json-server --watch db.json
 
-2. change url string in api class to http://localhost:3000
+2. change url string in lib/api/foodform_api.dart to http://localhost:3000
 
 3. json server accessible at http://localhost:3000/meals and http://localhost:3000/orders
 
@@ -29,9 +29,9 @@ Wout Renkin, Seppe Alaerts
 
         lt --port 3000
 
-2. change url string in api class to https://[output_in_console]
+2. change url string in lib/api/foodform_api.dart to [output_in_console]
 
-3. json server accessible at https://[output_in_console]/meals and https://[output_in_console]/orders
+3. json server accessible at [output_in_console]/meals and [output_in_console]/orders
 
 #### Troubleshooting
 ##### File is not digitally signed

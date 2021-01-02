@@ -27,7 +27,11 @@ class _OrderPage extends State {
       appBar: AppBar(title: Text("Orders")),
       drawer: NavigationDrawer(),
       body: Center(
-        child: loading ? CircularProgressIndicator() : _orderList(),
+        child: loading
+            ? CircularProgressIndicator(
+                valueColor: new AlwaysStoppedAnimation<Color>(Colors.grey),
+              )
+            : _orderList(),
       ),
     );
   }
