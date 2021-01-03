@@ -39,10 +39,10 @@ class _OrderItemPage extends State {
                 ? CircularProgressIndicator(
                     valueColor: new AlwaysStoppedAnimation<Color>(Colors.grey),
                   )
-                : _OrderItemForm()));
+                : _orderItemForm()));
   }
 
-  _OrderItemForm() {
+  _orderItemForm() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
