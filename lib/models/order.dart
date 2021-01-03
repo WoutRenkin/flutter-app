@@ -1,14 +1,14 @@
 class Order {
-  int orderID;
+  int id;
   int mealID;
   int amount;
   int table;
 
-  Order({this.orderID, this.mealID, this.amount, this.table});
+  Order({this.id, this.mealID, this.amount, this.table});
 
   factory Order.fromJson(Map<String, dynamic> json) {
     return Order(
-      orderID: json['order_id'],
+      id: json['id'],
       mealID: json['meal_id'],
       amount: json['amount'],
       table: json['table'],

@@ -1,5 +1,5 @@
 class Meal {
-  int mealID;
+  int id;
   String name;
   String description;
   String picture;
@@ -12,7 +12,7 @@ class Meal {
   bool fish;
 
   Meal({
-    this.mealID,
+    this.id,
     this.name,
     this.description,
     this.picture,
@@ -27,7 +27,7 @@ class Meal {
 
   factory Meal.fromJson(Map<String, dynamic> json) {
     return Meal(
-      mealID: json['meal_id'],
+      id: json['id'],
       name: json['name'],
       description: json['description'],
       picture: json['picture'],

@@ -4,7 +4,7 @@ import '../models/order.dart';
 import '../models/meal.dart';
 
 class FoodFormAPI {
-  static String url = 'https://giant-fly-9.loca.lt';
+  static String url = 'https://shaggy-turkey-61.loca.lt';
 
   static Future<List<Order>> fetchOrders() async {
     final response = await http.get(url + '/orders');
@@ -25,6 +25,15 @@ class FoodFormAPI {
       return jsonResponse.map((meal) => new Meal.fromJson(meal)).toList();
     } else {
       throw Exception('Failed to load meals');
+    }
+  }
+
+  static Future<Meal> fetchMeal(int id) async {
+    final response = await http.get(url + '/meals/' + id.toString());
+    if (response.statusCode == 200) {
+      return Meal.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to load meal');
     }
   }
 }
