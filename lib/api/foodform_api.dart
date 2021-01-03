@@ -4,7 +4,7 @@ import '../models/order.dart';
 import '../models/meal.dart';
 
 class FoodFormAPI {
-  static String url = 'https://shaggy-turkey-61.loca.lt';
+  static String url = 'https://rare-shrimp-31.loca.lt';
 
   // ORDERS
   // GET order
@@ -16,6 +16,22 @@ class FoodFormAPI {
       return jsonResponse.map((order) => new Order.fromJson(order)).toList();
     } else {
       throw Exception('Failed to load orders');
+    }
+  }
+
+  // POST order
+  static Future<Order> createOrder(Order order) async {
+    final http.Response response = await http.post(
+      url + '/orders',
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(order),
+    );
+    if (response.statusCode == 201) {
+      return Order.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to create order');
     }
   }
 
@@ -39,22 +55,6 @@ class FoodFormAPI {
       return Meal.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to load meal');
-    }
-  }
-
-  // POST meal
-  static Future<Meal> createMeal(Meal meal) async {
-    final http.Response response = await http.post(
-      url + '/meals',
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(meal),
-    );
-    if (response.statusCode == 201) {
-      return Meal.fromJson(jsonDecode(response.body));
-    } else {
-      throw Exception('Failed to create meal');
     }
   }
 }

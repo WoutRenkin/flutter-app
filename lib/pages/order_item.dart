@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodform/api/foodform_api.dart';
 import 'package:foodform/models/meal.dart';
+import 'package:foodform/models/order.dart';
 import 'package:foodform/widgets/navigation.dart';
 
 class OrderItemPage extends StatefulWidget {
@@ -20,11 +21,13 @@ class _OrderItemPage extends State {
   bool loading = true;
 
   Meal meal;
+  Order order;
 
   @override
   void initState() {
     super.initState();
     _getMeal(id);
+    order = new Order(mealID: null, amount: null, table: null);
   }
 
   @override
@@ -104,7 +107,9 @@ class _OrderItemPage extends State {
             RaisedButton(
               color: Colors.white,
               padding: const EdgeInsets.all(15.0),
-              onPressed: () {},
+              onPressed: () {
+                _addOrder();
+              },
               child: Text('Submit', style: TextStyle(fontSize: 16)),
             ),
           ],
@@ -119,6 +124,16 @@ class _OrderItemPage extends State {
         meal = result;
         loading = false;
       });
+    });
+  }
+
+  void _addOrder() {
+    order.mealID = id;
+    order.amount = _amountValue;
+    order.table = _tableValue;
+
+    FoodFormAPI.createOrder(order).then((result) {
+      Navigator.pop(context, true);
     });
   }
 }
