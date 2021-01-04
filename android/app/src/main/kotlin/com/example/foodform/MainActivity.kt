@@ -1,4 +1,4 @@
-package com.example.foodform
+package be.thomasmore.mobiledev
 
 import io.flutter.embedding.android.FlutterActivity
 
