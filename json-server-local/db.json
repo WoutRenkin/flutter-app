@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Stoofvlees",
-      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
+      "description": "Stoofvlees op laag vuur gedurende lange tijd gegaard. Wordt geserveerd met frieten.",
       "picture": "stoofvlees.png",
       "price": "12.95",
       "egg": false,
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "name": "Mosselen",
-      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
+      "description": "Mosselen natuur, geserveerd met frieten.",
       "picture": "mosselen.png",
       "price": "12.95",
       "egg": false,
@@ -29,7 +29,7 @@
     {
       "id": 3,
       "name": "Pizza",
-      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
+      "description": "Pizza Pollo. Kipblokjes, champignons, mozzarella.",
       "picture": "pizza.png",
       "price": "12.95",
       "egg": false,
@@ -38,45 +38,6 @@
       "shellfish": false,
       "sesame_seed": true,
       "fish": false
-    },
-    {
-      "name": "Mosselen",
-      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
-      "picture": "mosselen.png",
-      "price": "12.95",
-      "egg": false,
-      "lactose": false,
-      "gluten": false,
-      "shellfish": true,
-      "sesame_seed": false,
-      "fish": true,
-      "id": 4
-    },
-    {
-      "name": "Pizza",
-      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
-      "picture": "pizza.png",
-      "price": "12.95",
-      "egg": false,
-      "lactose": true,
-      "gluten": true,
-      "shellfish": false,
-      "sesame_seed": true,
-      "fish": false,
-      "id": 5
-    },
-    {
-      "name": "Stoofvlees",
-      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum. Sed ut perspiciatis ",
-      "picture": "stoofvlees.png",
-      "price": "12.95",
-      "egg": false,
-      "lactose": false,
-      "gluten": true,
-      "shellfish": false,
-      "sesame_seed": true,
-      "fish": false,
-      "id": 6
     }
   ],
   "orders": [
