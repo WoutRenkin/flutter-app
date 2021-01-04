@@ -16,7 +16,7 @@ class _ScanPage extends State {
   @override
   void initState() {
     super.initState();
-    /* checkPermissions(); */
+    checkPermissions();
   }
 
   @override
