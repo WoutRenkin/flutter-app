@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:foodform/pages/order_item.dart';
 import 'package:foodform/widgets/navigation.dart';
+import 'package:augmented_reality_plugin_wikitude/wikitude_plugin.dart';
+import 'package:augmented_reality_plugin_wikitude/wikitude_response.dart';
 
-class ScanPage extends StatelessWidget {
+class ScanPage extends StatefulWidget {
+  @override
+  _ScanPage createState() => _ScanPage();
+}
+
+class _ScanPage extends State {
+  List<String> features = ["image_tracking"];
+  bool loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    /* checkPermissions(); */
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,5 +75,36 @@ class ScanPage extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  checkPermissions() {
+    this.checkDeviceCompatibility().then((value) => {
+          if (value.success)
+            {
+              this.requestARPermissions().then((value) => {
+                    if (value.success)
+                      {
+                        this.setState(() {
+                          loading = false;
+                        })
+                      }
+                    else
+                      {
+                        debugPrint("AR permissions denied"),
+                        debugPrint(value.message)
+                      }
+                  })
+            }
+          else
+            {debugPrint("Device incompatible"), debugPrint(value.message)}
+        });
+  }
+
+  Future<WikitudeResponse> checkDeviceCompatibility() async {
+    return await WikitudePlugin.isDeviceSupporting(this.features);
+  }
+
+  Future<WikitudeResponse> requestARPermissions() async {
+    return await WikitudePlugin.requestARPermissions(this.features);
   }
 }
