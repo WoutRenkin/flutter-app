@@ -4,7 +4,7 @@ import '../models/order.dart';
 import '../models/meal.dart';
 
 class FoodFormAPI {
-  static String url = 'https://rare-shrimp-31.loca.lt';
+  static String url = 'https://curvy-wasp-71.loca.lt';
 
   // ORDERS
   // GET order

@@ -46,6 +46,8 @@ class _OrderPage extends State {
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: ListTile(
+              leading: Image.asset('assets/img/' +
+                  mealList[orderList[position].mealID - 1].picture),
               title: Text(mealList[orderList[position].mealID - 1].name),
               subtitle: Text('tafel: ' +
                   orderList[position].table.toString() +

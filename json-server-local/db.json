@@ -103,24 +103,6 @@
       "meal_id": 3,
       "amount": 4,
       "table": 2
-    },
-    {
-      "meal_id": 3,
-      "amount": 4,
-      "table": 4,
-      "id": 5
-    },
-    {
-      "meal_id": 1,
-      "amount": 2,
-      "table": 3,
-      "id": 6
-    },
-    {
-      "meal_id": 2,
-      "amount": 1,
-      "table": 4,
-      "id": 7
     }
   ]
 }
