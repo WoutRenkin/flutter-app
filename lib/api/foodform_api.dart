@@ -4,7 +4,7 @@ import '../models/order.dart';
 import '../models/meal.dart';
 
 class FoodFormAPI {
-  static String url = 'https://curvy-wasp-71.loca.lt';
+  static String url = 'https://young-gecko-93.loca.lt';
 
   // ORDERS
   // GET order
@@ -32,6 +32,17 @@ class FoodFormAPI {
       return Order.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to create order');
+    }
+  }
+
+  //DELETE order
+  static Future deleteOrder(int id) async {
+    final http.Response response =
+        await http.delete(url + '/orders/' + id.toString());
+    if (response.statusCode == 200) {
+      return;
+    } else {
+      throw Exception("Failed to remove order.");
     }
   }
 

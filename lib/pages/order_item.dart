@@ -131,9 +131,28 @@ class _OrderItemPage extends State {
     order.mealID = id;
     order.amount = _amountValue;
     order.table = _tableValue;
-
-    FoodFormAPI.createOrder(order).then((result) {
+    if (order.amount == 0 || order.table == 0) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text("Order"),
+            content: Text("Make sure to select an amount and table number."),
+            actions: <Widget>[
+          TextButton(
+            child: Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      )
+          
+      );
+    } else {
+      FoodFormAPI.createOrder(order).then((result) {
       Navigator.pop(context, true);
     });
+    }
+    
   }
 }

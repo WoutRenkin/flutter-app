@@ -42,22 +42,22 @@
   ],
   "orders": [
     {
-      "id": 1,
-      "meal_id": 1,
-      "amount": 2,
-      "table": 5
-    },
-    {
-      "id": 2,
       "meal_id": 2,
       "amount": 3,
-      "table": 1
+      "table": 3,
+      "id": 4
     },
     {
-      "id": 3,
+      "meal_id": 3,
+      "amount": 3,
+      "table": 3,
+      "id": 5
+    },
+    {
       "meal_id": 1,
-      "amount": 1,
-      "table": 3
+      "amount": 3,
+      "table": 2,
+      "id": 7
     },
     {
       "id": 4,

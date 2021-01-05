@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodform/pages/order_item.dart';
+import 'package:foodform/pages/arorder.dart';
 import 'package:foodform/widgets/navigation.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_plugin.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_response.dart';
@@ -86,7 +87,10 @@ class _ScanPage extends State {
                       {
                         this.setState(() {
                           loading = false;
-                        })
+                        }),
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ArOrderPage()))
                       }
                     else
                       {
