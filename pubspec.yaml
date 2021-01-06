@@ -1,5 +1,5 @@
-name: foodform
-description: A new Flutter project.
+name: FoodForm
+description: An all new way to order your food!
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
