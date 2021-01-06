@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:foodform/pages/order_item.dart';
-import 'package:foodform/pages/arorder.dart';
-import 'package:foodform/widgets/navigation.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_plugin.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_response.dart';
+import '../pages/order_item.dart';
+import '../pages/arorder.dart';
+import '../widgets/navigation.dart';
 
 class ScanPage extends StatefulWidget {
   @override
@@ -90,7 +90,8 @@ class _ScanPage extends State {
                         }),
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ArOrderPage()))
+                            MaterialPageRoute(
+                                builder: (context) => ArOrderPage()))
                       }
                     else
                       {

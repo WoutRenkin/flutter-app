@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-//import 'package:foodform/pages/scan.dart';
-import 'package:foodform/widgets/navigation.dart';
-import 'package:foodform/pages/arorder.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_plugin.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_response.dart';
+import '../widgets/navigation.dart';
+import '../pages/arorder.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-class _HomePageState extends State<HomePage> {
 
+class _HomePageState extends State<HomePage> {
   List<String> features = ["image_tracking"];
 
   @override
@@ -40,25 +39,26 @@ class _HomePageState extends State<HomePage> {
 
   checkPermissions() {
     this.checkDeviceCompatibility().then((value) => {
-      if (value.success)
-      {
-        this.requestARPermissions().then((value) => {
           if (value.success)
-          {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ArOrderPage()))
-                }
-                else
-                {
-                  debugPrint("AR permissions denied"),
-                  debugPrint(value.message)
-                  }
-            })
-        }
-        else
-        {debugPrint("Device incompatible"), debugPrint(value.message)}
-      });
+            {
+              this.requestARPermissions().then((value) => {
+                    if (value.success)
+                      {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ArOrderPage()))
+                      }
+                    else
+                      {
+                        debugPrint("AR permissions denied"),
+                        debugPrint(value.message)
+                      }
+                  })
+            }
+          else
+            {debugPrint("Device incompatible"), debugPrint(value.message)}
+        });
   }
 
   Future<WikitudeResponse> checkDeviceCompatibility() async {

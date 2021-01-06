@@ -1,18 +1,15 @@
 import 'dart:convert';
-
 import 'package:augmented_reality_plugin_wikitude/architect_widget.dart';
 import 'package:augmented_reality_plugin_wikitude/startupConfiguration.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_plugin.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_response.dart';
 import 'package:flutter/material.dart';
-import 'package:foodform/models/order.dart';
-import 'package:foodform/pages/order_item.dart';
-
+import '../models/order.dart';
+import '../pages/order_item.dart';
 
 class ArFoodFormWidget extends StatefulWidget {
   @override
-  _ArFoodFormWidgetState createState() =>
-      _ArFoodFormWidgetState();
+  _ArFoodFormWidgetState createState() => _ArFoodFormWidgetState();
 }
 
 class _ArFoodFormWidgetState extends State<ArFoodFormWidget>
@@ -76,13 +73,12 @@ class _ArFoodFormWidgetState extends State<ArFoodFormWidget>
   }
 
   Future<void> onArchitectWidgetCreated() async {
-    this.architectWidget.load(
-        'samples/foodform/index.html',
-        onLoadSuccess,
-        onLoadFailed);
+    this
+        .architectWidget
+        .load('samples/foodform/index.html', onLoadSuccess, onLoadFailed);
     this.architectWidget.resume();
-    this.architectWidget.setJSONObjectReceivedCallback((result) => onJSONObjectReceived(result));
-
+    this.architectWidget.setJSONObjectReceivedCallback(
+        (result) => onJSONObjectReceived(result));
   }
 
   Future<void> onLoadSuccess() async {
@@ -93,13 +89,13 @@ class _ArFoodFormWidgetState extends State<ArFoodFormWidget>
     debugPrint("Failed to load Architect World");
     debugPrint(error);
   }
-void onJSONObjectReceived(Map<String, dynamic> jsonObject) async {
-      var imageScanned = Order.fromJson(jsonObject);
-       Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => OrderItemPage(imageScanned.mealID)),
-        );
-    
-  }
 
+  void onJSONObjectReceived(Map<String, dynamic> jsonObject) async {
+    var imageScanned = Order.fromJson(jsonObject);
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => OrderItemPage(imageScanned.mealID)),
+    );
+  }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:foodform/pages/orders.dart';
-import 'package:foodform/pages/home.dart';
-import 'package:foodform/pages/scan.dart';
+import '../pages/orders.dart';
+import '../pages/home.dart';
+import '../pages/scan.dart';
 
 class NavigationDrawer extends StatelessWidget {
   @override

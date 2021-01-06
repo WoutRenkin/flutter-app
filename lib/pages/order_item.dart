@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodform/api/foodform_api.dart';
-import 'package:foodform/models/meal.dart';
-import 'package:foodform/models/order.dart';
-import 'package:foodform/widgets/navigation.dart';
+import '../api/foodform_api.dart';
+import '../models/meal.dart';
+import '../models/order.dart';
+import '../widgets/navigation.dart';
 
 class OrderItemPage extends StatefulWidget {
   final int id;
@@ -135,24 +135,22 @@ class _OrderItemPage extends State {
       showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text("Order"),
-            content: Text("Make sure to select an amount and table number."),
-            actions: <Widget>[
-          TextButton(
-            child: Text('OK'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      )
-          
-      );
+                title: Text("Order"),
+                content:
+                    Text("Make sure to select an amount and table number."),
+                actions: <Widget>[
+                  TextButton(
+                    child: Text('OK'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              ));
     } else {
       FoodFormAPI.createOrder(order).then((result) {
-      Navigator.pop(context, true);
-    });
+        Navigator.pop(context, true);
+      });
     }
-    
   }
 }
