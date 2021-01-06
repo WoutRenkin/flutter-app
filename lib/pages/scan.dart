@@ -30,48 +30,11 @@ class _ScanPage extends State {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Container(
-                margin: const EdgeInsets.only(top: 20.0),
-                child: RaisedButton(
-                  color: Colors.white,
-                  padding: const EdgeInsets.all(15.0),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => OrderItemPage(1)),
-                    );
-                  },
-                  child:
-                      Text('Order Stoofvlees', style: TextStyle(fontSize: 16)),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 20.0),
-                child: RaisedButton(
-                  color: Colors.white,
-                  padding: const EdgeInsets.all(15.0),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => OrderItemPage(2)),
-                    );
-                  },
-                  child: Text('Order Mosselen', style: TextStyle(fontSize: 16)),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 20.0),
-                child: RaisedButton(
-                  color: Colors.white,
-                  padding: const EdgeInsets.all(15.0),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => OrderItemPage(3)),
-                    );
-                  },
-                  child: Text('Order Pizza', style: TextStyle(fontSize: 16)),
-                ),
+              RaisedButton(
+                color: Colors.white,
+                padding: const EdgeInsets.all(15.0),
+                onPressed: checkPermissions,
+                child: Text('Scan a menu', style: TextStyle(fontSize: 16)),
               ),
             ],
           ),

@@ -24,7 +24,16 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Text("Welcome to FoodForm!", style: TextStyle(fontSize: 20)),
           Container(
+            margin: const EdgeInsets.all(30.0),
+            child: Text(
+                "To use this app, scan a menu like in the example below:",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16)),
+          ),
+          Image.asset('assets/img/example.png'),
+          Container(
             margin: const EdgeInsets.only(top: 20.0),
+            width: 250,
             child: RaisedButton(
               color: Colors.white,
               padding: const EdgeInsets.all(15.0),

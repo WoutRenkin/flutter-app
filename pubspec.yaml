@@ -64,15 +64,10 @@ flutter:
   assets:
     - assets/img/foodform.png
     - assets/img/foodform.svg
-    - assets/img/ei.png
-    - assets/img/gluten.png
-    - assets/img/melk.png
     - assets/img/mosselen.png
     - assets/img/pizza.png
-    - assets/img/schaaldieren.png
-    - assets/img/sesamzaad.png
     - assets/img/stoofvlees.png
-    - assets/img/vis.png
+    - assets/img/example.png
     - samples/
     - samples/foodform/
     - samples/foodform/js/
