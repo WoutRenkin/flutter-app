@@ -46,6 +46,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  //We check all permissions necessary to load our AR archicture, then we will navigate to the page where the AR widget will be called.
   checkPermissions() {
     this.checkDeviceCompatibility().then((value) => {
           if (value.success)

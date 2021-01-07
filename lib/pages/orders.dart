@@ -15,6 +15,8 @@ class _OrderPage extends State {
   List<Meal> mealList = List<Meal>();
   int orderCount = 0;
   int totalPrice = 0;
+
+  //Loading is set on true and will be put on false after API data is loaded. 
   bool loading = true;
 
   @override
@@ -72,6 +74,7 @@ class _OrderPage extends State {
             )));
   }
 
+  //This function builds the orderList and displays current orders as cards.
   _orderList() {
     return orderList.isEmpty
         ? Center(
@@ -111,6 +114,7 @@ class _OrderPage extends State {
           );
   }
 
+  //When pressed orders will be deleted and user will be navigated to order complete page.
   void _orderComplete() {
     
     for (int i = 0; i < orderList.length; i++) {
@@ -124,12 +128,16 @@ class _OrderPage extends State {
 
   }
 
+  //Delete all orders when pressed "Delete all orders" popupdropdown menu in navbar 
   void _deleteAllOrders(value) {
     if (value == 1) {
-      
+
+      //Loop the delet API with order ID
       for (int i = 0; i < orderList.length; i++) {
         FoodFormAPI.deleteOrder(orderList[i].id);
       }
+
+      //Reset orderList state and order count
       setState(() {
         orderList = List();
         orderCount = 0;
@@ -137,7 +145,10 @@ class _OrderPage extends State {
     }
   }
 
+  //Delete order based on order id
   void _deleteOrder(id) {
+
+    //Reload page after we deleted the order so we make sure we are showing the orders currently in our API.
     FoodFormAPI.deleteOrder(id).then((result) {
       Navigator.push(
         context,
@@ -146,6 +157,7 @@ class _OrderPage extends State {
     });
   }
 
+  //Load all API data (Orders and Meals) and fill our state lists to load our cards.
   void _getData() async {
     FoodFormAPI.fetchOrders().then((result) {
       setState(() {
@@ -162,6 +174,7 @@ class _OrderPage extends State {
     });
   }
 
+  //Calculate total price of all orders
   String calcTotalPrice() {
     double totalprice = 0;
     double price;

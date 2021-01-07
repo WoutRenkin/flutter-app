@@ -119,6 +119,7 @@ class _OrderItemPage extends State {
     );
   }
 
+  //Shows the meal chosen in the Wikitude app.
   void _getMeal(int id) {
     FoodFormAPI.fetchMeal(id).then((result) {
       setState(() {
@@ -128,6 +129,7 @@ class _OrderItemPage extends State {
     });
   }
 
+  //Adds an order to our API + check for empty values, if any value is empty -> then we display an alert.
   void _addOrder() {
     order.mealID = id;
     order.amount = _amountValue;

@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import '../models/order.dart';
 import '../pages/order_item.dart';
 
+//This widget allows us to load the wikitude architecture. 
+
 class ArFoodFormWidget extends StatefulWidget {
   @override
   _ArFoodFormWidgetState createState() => _ArFoodFormWidgetState();
@@ -90,8 +92,11 @@ class _ArFoodFormWidgetState extends State<ArFoodFormWidget>
     debugPrint(error);
   }
 
+  //Here we receive the json object sent by the onclick event on our image displayed in the wikitude environemnt
   void onJSONObjectReceived(Map<String, dynamic> jsonObject) async {
     var imageScanned = Order.fromJson(jsonObject);
+
+    //We push the meal ID that we received to the OrderItemPage
     Navigator.push(
       context,
       MaterialPageRoute(

@@ -16,7 +16,7 @@ class _ArOrderPageState extends State<ArOrderPage> {
       ),
       drawer: NavigationDrawer(),
       body: Center(
-          // Here we load the Widget with the AR Dino experience
+          //Load our ARFoodFormWidget which will trigger Wikitude
           child: ArFoodFormWidget()),
     );
   }
