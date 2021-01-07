@@ -42,58 +42,10 @@
   ],
   "orders": [
     {
-      "meal_id": 2,
-      "amount": 3,
-      "table": 3,
-      "id": 4
-    },
-    {
-      "meal_id": 3,
-      "amount": 3,
-      "table": 3,
-      "id": 5
-    },
-    {
-      "meal_id": 1,
-      "amount": 3,
-      "table": 2,
-      "id": 7
-    },
-    {
-      "id": 4,
-      "meal_id": 3,
-      "amount": 4,
-      "table": 2
-    },
-    {
-      "meal_id": 1,
-      "amount": 2,
-      "table": 3,
-      "id": 5
-    },
-    {
-      "meal_id": 1,
-      "amount": 2,
-      "table": 2,
-      "id": 6
-    },
-    {
       "meal_id": 3,
       "amount": 2,
-      "table": 4,
-      "id": 8
-    },
-    {
-      "meal_id": 3,
-      "amount": 4,
-      "table": 2,
-      "id": 9
-    },
-    {
-      "meal_id": 2,
-      "amount": 4,
-      "table": 2,
-      "id": 10
+      "table": 3,
+      "id": 1
     }
   ]
 }

@@ -68,6 +68,7 @@ flutter:
     - assets/img/pizza.png
     - assets/img/stoofvlees.png
     - assets/img/example.png
+    - assets/icons/icon.png
     - samples/
     - samples/foodform/
     - samples/foodform/js/
