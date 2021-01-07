@@ -3,6 +3,7 @@ import '../api/foodform_api.dart';
 import '../models/meal.dart';
 import '../models/order.dart';
 import '../widgets/navigation.dart';
+import 'ordercomplete.dart';
 
 class OrderPage extends StatefulWidget {
   @override
@@ -25,7 +26,20 @@ class _OrderPage extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Orders")),
+        appBar: AppBar(
+          title: Text("Orders"),
+          actions: <Widget>[
+            PopupMenuButton<int>(
+              onSelected: _deleteAllOrders,
+              itemBuilder: (context) => [
+                PopupMenuItem(
+                  value: 1,
+                  child: Text("Delete all orders"),
+                ),
+              ],
+            )
+          ],
+        ),
         drawer: NavigationDrawer(),
         body: Container(
             padding: EdgeInsets.all(10.0),
@@ -45,6 +59,15 @@ class _OrderPage extends State {
                     child: Text("Total price: €" + calcTotalPrice(),
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20))),
+                SizedBox(
+                    width: double.infinity,
+                    child: RaisedButton(
+                      color: Colors.white,
+                      child: Text("Order",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20)),
+                      onPressed: _orderComplete,
+                    ))
               ],
             )));
   }
@@ -75,7 +98,7 @@ class _OrderPage extends State {
                         Container(
                           child: IconButton(
                               icon: Icon(Icons.delete),
-                              color: Colors.red,
+                              color: Colors.black,
                               onPressed: () =>
                                   _deleteOrder(orderList[position].id)),
                         )
@@ -86,6 +109,32 @@ class _OrderPage extends State {
               );
             },
           );
+  }
+
+  void _orderComplete() {
+    
+    for (int i = 0; i < orderList.length; i++) {
+        FoodFormAPI.deleteOrder(orderList[i].id);
+    }
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => OrderCompletePage()),
+      );
+
+  }
+
+  void _deleteAllOrders(value) {
+    if (value == 1) {
+      
+      for (int i = 0; i < orderList.length; i++) {
+        FoodFormAPI.deleteOrder(orderList[i].id);
+      }
+      setState(() {
+        orderList = List();
+        orderCount = 0;
+      });
+    }
   }
 
   void _deleteOrder(id) {

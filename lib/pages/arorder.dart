@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/foodformar.dart';
+import '../widgets/navigation.dart';
 
 class ArOrderPage extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _ArOrderPageState extends State<ArOrderPage> {
       appBar: AppBar(
         title: Text("Scan a menu"),
       ),
+      drawer: NavigationDrawer(),
       body: Center(
           // Here we load the Widget with the AR Dino experience
           child: ArFoodFormWidget()),

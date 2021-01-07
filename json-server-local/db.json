@@ -40,12 +40,5 @@
       "fish": false
     }
   ],
-  "orders": [
-    {
-      "meal_id": 3,
-      "amount": 2,
-      "table": 3,
-      "id": 1
-    }
-  ]
+  "orders": []
 }

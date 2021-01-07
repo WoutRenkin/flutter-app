@@ -3,6 +3,7 @@ import '../api/foodform_api.dart';
 import '../models/meal.dart';
 import '../models/order.dart';
 import '../widgets/navigation.dart';
+import 'arorder.dart';
 
 class OrderItemPage extends StatefulWidget {
   final int id;
@@ -149,7 +150,8 @@ class _OrderItemPage extends State {
               ));
     } else {
       FoodFormAPI.createOrder(order).then((result) {
-        Navigator.pop(context, true);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ArOrderPage()));
       });
     }
   }
