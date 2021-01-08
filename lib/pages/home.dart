@@ -32,6 +32,13 @@ class _HomePageState extends State<HomePage> {
           ),
           Image.asset('assets/img/example.png'),
           Container(
+            margin: const EdgeInsets.all(30.0),
+            child: Text(
+                "When you have selected the dishes you want, go to the Order page to confirm your order.",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16)),
+          ),
+          Container(
             margin: const EdgeInsets.only(top: 20.0),
             width: 250,
             child: RaisedButton(
